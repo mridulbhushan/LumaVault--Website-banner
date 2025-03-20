@@ -75,9 +75,29 @@
             background: #005f8a;
         }
 
-        /* Background Audio */
-        audio {
-            display: none;
+        /* Audio Controls */
+        .audio-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .audio-controls button {
+            background: #0073b1;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .audio-controls button:hover {
+            background: #005f8a;
         }
     </style>
 </head>
@@ -87,14 +107,14 @@
     <div class="banner">
         <!-- Video Background -->
         <video autoplay loop muted playsinline>
-            <source src="LumaVault AI Showcase_simple_compose_Sora.mp4" type="video/mp4">
+            <source src="https://yourusername.github.io/LumaVault--Website-banner/LumaVault_Showcase.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <!-- Banner Content -->
         <div class="banner-content">
             <p>
-                <a href="https://mridulbhushan.github.io/LumaVault-Website/">
+                <a href="https://yourusername.github.io/LumaVault--Website-banner/">
                     <img src="https://i.postimg.cc/mZKxFh8z/Gemini-Generated-Logo.jpg" alt="LumaVault Logo" class="logo">
                 </a> 
                 <strong>LumaVault<sup>TM</sup></strong>
@@ -106,15 +126,33 @@
             <p><strong>iLLUMAnate<sup>TM</sup>:</strong> AI-driven compliance & security scanning. ✅</p>
             <p><strong>SynergyIndex<sup>TM</sup>:</strong> Optimize teamwork & eliminate redundant tasks. 🚀</p>
 
-            <p class="cta"><a href="https://mridulbhushan.github.io/LumaVault-Website/">Book Your Free Demo</a></p>
+            <p class="cta"><a href="https://yourusername.github.io/LumaVault--Website-banner/">Book Your Free Demo</a></p>
+        </div>
+
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <button onclick="toggleAudio()">🔊 Play Audio</button>
+            <audio id="background-audio" loop>
+                <source src="https://yourusername.github.io/LumaVault--Website-banner/background-music.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
         </div>
     </div>
 
-    <!-- Background Audio -->
-    <audio autoplay loop>
-        <source src="music_fx_violin_johan_sderqvist_vi.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-    </audio>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById("background-audio");
+            var button = document.querySelector(".audio-controls button");
+
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = "🔇 Pause Audio";
+            } else {
+                audio.pause();
+                button.innerHTML = "🔊 Play Audio";
+            }
+        }
+    </script>
 
 </body>
 </html>
